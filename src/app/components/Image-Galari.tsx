@@ -28,7 +28,23 @@ export default function AdvancedImageGallery() {
         { id: 9, src: "/image/image9.jpeg", alt: "Portrait 9", gridArea: "3 / 4 / 4 / 5" },
         { id: 10, src: "/image/image10.jpeg", alt: "Portrait 10", gridArea: "2 / 6 / 3 / 7" },
         { id: 11, src: "/image/image11.jpeg", alt: "Portrait 11", gridArea: "3 / 5 / 4 / 6" },
-        { id: 12, src: "/image/image7.jpeg", alt: "Portrait 12", gridArea: "3 / 6 / 4 / 7" },
+        { id: 12, src: "/image/image2.jpeg", alt: "Portrait 12", gridArea: "3 / 6 / 4 / 7" },
+
+        { id: 13, src: "/image/image1.jpeg", alt: "Portrait 13", gridArea: "4 / 1 / 6 / 2" },
+        { id: 14, src: "/image/image2.jpeg", alt: "Portrait 14", gridArea: "4 / 2 / 5 / 3" },
+        { id: 15, src: "/image/image3.jpeg", alt: "Portrait 15", gridArea: "4 / 3 / 5 / 4" },
+        { id: 16, src: "/image/image4.jpeg", alt: "Portrait 16", gridArea: "4 / 4 / 6 / 5" },
+        { id: 17, src: "/image/image5.jpeg", alt: "Portrait 17", gridArea: "4 / 5 / 6 / 6" },
+        { id: 18, src: "/image/image6.jpeg", alt: "Portrait 18", gridArea: "4 / 6 / 5 / 7" },
+
+        { id: 19, src: "/image/image7.jpeg", alt: "Portrait 19", gridArea: "6 / 1 / 7 / 2" },
+        { id: 20, src: "/image/image6.jpeg", alt: "Portrait 20", gridArea: "5 / 2 / 7 / 4" },
+        { id: 21, src: "/image/image9.jpeg", alt: "Portrait 21", gridArea: "6 / 4 / 7 / 5" },
+        { id: 22, src: "/image/image10.jpeg", alt: "Portrait 22", gridArea: "5 / 6 / 6 / 7" },
+        { id: 23, src: "/image/image11.jpeg", alt: "Portrait 23", gridArea: "6 / 5 / 7 / 6" },
+        { id: 24, src: "/image/image8.jpeg", alt: "Portrait 24", gridArea: "6 / 6 / 7 / 7" },
+
+     
     ]
 
     // All available image paths for cycling through during refresh
@@ -104,25 +120,48 @@ export default function AdvancedImageGallery() {
     return (
         <div className=" container mx-auto px-4 py-8">
             {/* Desktop layout with 16:9 aspect ratio */}
-            <div className="hidden lg:grid grid-cols-6 grid-rows-3 gap-2 h-[700px] ">
-                {images.slice(0, 12).map((image) => (
-                    <div
-                        key={`${image.id}-${image.src}`}
-                        className="relative overflow-hidden transition-all duration-300 ease-in-out"
-                        style={{ gridArea: image.gridArea }}
-                    >
-                        <div className="aspect-video w-full h-full relative bg-gray-100">
-                            <Image
-                                src={image.src || "/placeholder.svg"}
-                                alt={image.alt}
-                                fill
-                                className="object-cover transition-opacity duration-500 "
-                                sizes="(max-width: 1024px) 50vw, 16vw"
-                            />
-                        </div>
-                    </div>
-                ))}
+         
+<div className="hidden lg:grid grid-cols-6 grid-rows-4 gap-2  ">
+    {images.slice(0, 24).map((image) => (
+        <div
+            key={`${image.id}-${image.src}`}
+            className="relative overflow-hidden transition-all duration-300 ease-in-out"
+            style={{ gridArea: image.gridArea }}
+        >
+            <div className="aspect-video w-full h-full relative bg-gray-100">
+                <Image
+                    src={image.src || "/placeholder.svg"}
+                    alt={image.alt}
+                    fill
+                    className="object-cover transition-opacity duration-500"
+                    sizes="(max-width: 1024px) 50vw, 16vw"
+                />
             </div>
+        </div>
+    ))}
+</div>
+
+{/* Mobile/tablet responsive layout with 16:9 aspect ratio */}
+<div className="grid grid-cols-2 md:grid-cols-3 lg:hidden gap-1">
+    {images.slice(0, 24).map((image) => (
+        <div
+            key={`${image.id}-${image.src}`}
+            className={`relative overflow-hidden transition-all duration-300 ease-in-out 
+                ${image.id === 1 || image.id === 4 || image.id === 8 ? "col-span-2 row-span-2" : ""}`}
+        >
+            <div className="aspect-video w-full relative bg-gray-100">
+                <Image
+                    src={image.src || "/placeholder.svg"}
+                    alt={image.alt}
+                    fill
+                    className="object-cover transition-opacity duration-500"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                />
+            </div>
+        </div>
+    ))}
+</div>
+
 
             {/* Mobile/tablet responsive layout with 16:9 aspect ratio */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:hidden gap-2">
