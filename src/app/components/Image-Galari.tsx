@@ -39,7 +39,7 @@ export default function AdvancedImageGallery() {
   const [images, setImages] = useState<GalleryImage[]>(createInitialImages)
 
   // State to track refresh countdown
-  const [refreshCountdown, setRefreshCountdown] = useState(3)
+  // const [refreshCountdown, setRefreshCountdown] = useState(3)
 
   // State to track which images are currently transitioning
   const [transitioning, setTransitioning] = useState<Set<number>>(new Set())
@@ -87,7 +87,7 @@ export default function AdvancedImageGallery() {
     }, 500) // Wait for fade-out animation to complete
 
     // Reset countdown timer
-    setRefreshCountdown(5)
+    // setRefreshCountdown(5)
   }
 
   // Set up the refresh interval
@@ -98,14 +98,14 @@ export default function AdvancedImageGallery() {
     const intervalId = setInterval(refreshRandomImages, refreshInterval)
 
     // Countdown timer for visual feedback
-    const countdownId = setInterval(() => {
-      setRefreshCountdown((prev) => (prev > 0 ? prev - 1 : 10))
-    }, 1000)
+    // const countdownId = setInterval(() => {
+    //   setRefreshCountdown((prev) => (prev > 0 ? prev - 1 : 10))
+    // }, 1000)
 
     // Clean up the interval when component unmounts
     return () => {
       clearInterval(intervalId)
-      clearInterval(countdownId)
+      // clearInterval(countdownId)
     }
   }, [])
 
