@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 
+
 // Define our image data structure
 type GalleryImage = {
   id: number
@@ -13,17 +14,30 @@ type GalleryImage = {
 export default function AdvancedImageGallery() {
   // Available image paths for cycling through during refresh
   const availableImages = [
-    "/image/image1.jpeg",
-    "/image/image2.jpeg",
-    "/image/image3.jpeg",
-    "/image/image4.jpeg",
-    "/image/image5.jpeg",
-    "/image/image6.jpeg",
-    "/image/image7.jpeg",
-    "/image/image8.jpeg",
-    "/image/image9.jpeg",
-    "/image/image10.jpeg",
-    "/image/image11.jpeg",
+    "/image/New folder (2)/Screenshot_1.png",
+    "/image/New folder (2)/Screenshot_2.png",
+    "/image/New folder (2)/Screenshot_3.png",
+    "/image/New folder (2)/Screenshot_4.png",
+    "/image/New folder (2)/Screenshot_5.png",
+    "/image/New folder (2)/Screenshot_6.png",
+    "/image/New folder (2)/Screenshot_7.png",
+    "/image/New folder (2)/Screenshot_8.png",
+    "/image/New folder (2)/Screenshot_9.png",
+    "/image/New folder (2)/Screenshot_10.png",
+    "/image/New folder (2)/Screenshot_14.png",
+    "/image/New folder (2)/Screenshot_17.png",
+    "/image/New folder (2)/Screenshot_13.png",
+
+    // "/image/image2.jpeg",
+    // "/image/image3.jpeg",
+    // "/image/image4.jpeg",
+    // "/image/image5.jpeg",
+    // "/image/image6.jpeg",
+    // "/image/image7.jpeg",
+    // "/image/image8.jpeg",
+    // "/image/image9.jpeg",
+    // "/image/image10.jpeg",
+    // "/image/image11.jpeg",
   ]
 
   // Create initial images array
@@ -115,9 +129,8 @@ export default function AdvancedImageGallery() {
       <img
         src={images[index % images.length].src || "/placeholder.svg"}
         alt={images[index % images.length].alt}
-        className={`w-full h-full object-cover transition-opacity duration-1000 ${
-          isTransitioning(index) ? "opacity-0" : "opacity-100"
-        }`}
+        className={`w-full h-full object-cover transition-opacity duration-1000 ${isTransitioning(index) ? "opacity-0" : "opacity-100"
+          }`}
       />
     </div>
   )
@@ -139,30 +152,29 @@ export default function AdvancedImageGallery() {
         <div className="col-span-2 row-span-2">{renderGalleryImage(0)}</div>
         <div className="col-span-2 row-span-2">{renderGalleryImage(1)}</div>
         <div className="col-span-2 row-span-2">{renderGalleryImage(2)}</div>
-        
+
         {/* Row 2 */}
         <div className="col-span-3 row-span-2">{renderGalleryImage(3)}</div>
         <div className="col-span-3 row-span-2">{renderGalleryImage(4)}</div>
-        
+
         {/* Row 3 */}
         <div className="col-span-2 row-span-2">{renderGalleryImage(5)}</div>
         <div className="col-span-2 row-span-2">{renderGalleryImage(6)}</div>
         <div className="col-span-2 row-span-2">{renderGalleryImage(7)}</div>
-        
+
         {/* Row 4 */}
         <div className="col-span-3 row-span-2">{renderGalleryImage(8)}</div>
         <div className="col-span-3 row-span-2">{renderGalleryImage(9)}</div>
       </div>
 
       {/* Desktop layout (original complex grid) */}
-      <div className="hidden lg:grid grid-cols-12 grid-rows-6 gap-2 h-[80vh]">
+      <div className="hidden lg:grid grid-cols-12 grid-rows-6 gap-2 h-[100vh]">
         <div className="col-span-2 row-span-3 overflow-hidden">
           <img
             src={images[0].src || "/placeholder.svg"}
             alt={images[0].alt}
-            className={`w-full h-full object-cover transition-opacity duration-1000 ${
-              isTransitioning(0) ? "opacity-0" : "opacity-100"
-            }`}
+            className={`w-full h-full object-cover transition-opacity duration-1000 ${isTransitioning(0) ? "opacity-0" : "opacity-100"
+              }`}
           />
         </div>
 
@@ -171,18 +183,16 @@ export default function AdvancedImageGallery() {
             <img
               src={images[1].src || "/placeholder.svg"}
               alt={images[1].alt}
-              className={`w-full h-full object-cover transition-opacity duration-1000 ${
-                isTransitioning(1) ? "opacity-0" : "opacity-100"
-              }`}
+              className={`w-full h-full object-cover transition-opacity duration-1000 ${isTransitioning(1) ? "opacity-0" : "opacity-100"
+                }`}
             />
           </div>
           <div className="overflow-hidden">
             <img
               src={images[2].src || "/placeholder.svg"}
               alt={images[2].alt}
-              className={`w-full h-full object-cover transition-opacity duration-1000 ${
-                isTransitioning(2) ? "opacity-0" : "opacity-100"
-              }`}
+              className={`w-full h-full object-cover transition-opacity duration-1000 ${isTransitioning(2) ? "opacity-0" : "opacity-100"
+                }`}
             />
           </div>
         </div>
@@ -191,9 +201,8 @@ export default function AdvancedImageGallery() {
           <img
             src={images[3].src || "/placeholder.svg"}
             alt={images[3].alt}
-            className={`w-full h-full object-cover transition-opacity duration-1000 ${
-              isTransitioning(3) ? "opacity-0" : "opacity-100"
-            }`}
+            className={`w-full h-full object-cover transition-opacity duration-1000 ${isTransitioning(3) ? "opacity-0" : "opacity-100"
+              }`}
           />
         </div>
 
@@ -201,9 +210,8 @@ export default function AdvancedImageGallery() {
           <img
             src={images[4].src || "/placeholder.svg"}
             alt={images[4].alt}
-            className={`w-full h-full object-cover transition-opacity duration-1000 ${
-              isTransitioning(4) ? "opacity-0" : "opacity-100"
-            }`}
+            className={`w-full h-full object-cover transition-opacity duration-1000 ${isTransitioning(4) ? "opacity-0" : "opacity-100"
+              }`}
           />
         </div>
 
@@ -211,9 +219,8 @@ export default function AdvancedImageGallery() {
           <img
             src={images[5].src || "/placeholder.svg"}
             alt={images[5].alt}
-            className={`w-full h-full object-cover transition-opacity duration-1000 ${
-              isTransitioning(5) ? "opacity-0" : "opacity-100"
-            }`}
+            className={`w-full h-full object-cover transition-opacity duration-1000 ${isTransitioning(5) ? "opacity-0" : "opacity-100"
+              }`}
           />
         </div>
 
@@ -221,9 +228,8 @@ export default function AdvancedImageGallery() {
           <img
             src={images[6].src || "/placeholder.svg"}
             alt={images[6].alt}
-            className={`w-full h-full object-cover transition-opacity duration-1000 ${
-              isTransitioning(6) ? "opacity-0" : "opacity-100"
-            }`}
+            className={`w-full h-full object-cover transition-opacity duration-1000 ${isTransitioning(6) ? "opacity-0" : "opacity-100"
+              }`}
           />
         </div>
 
@@ -231,9 +237,8 @@ export default function AdvancedImageGallery() {
           <img
             src={images[7].src || "/placeholder.svg"}
             alt={images[7].alt}
-            className={`w-full h-full object-cover transition-opacity duration-1000 ${
-              isTransitioning(7) ? "opacity-0" : "opacity-100"
-            }`}
+            className={`w-full h-full object-cover transition-opacity duration-1000 ${isTransitioning(7) ? "opacity-0" : "opacity-100"
+              }`}
           />
         </div>
 
@@ -241,9 +246,8 @@ export default function AdvancedImageGallery() {
           <img
             src={images[8].src || "/placeholder.svg"}
             alt={images[8].alt}
-            className={`w-full h-full object-cover transition-opacity duration-1000 ${
-              isTransitioning(8) ? "opacity-0" : "opacity-100"
-            }`}
+            className={`w-full h-full object-cover transition-opacity duration-1000 ${isTransitioning(8) ? "opacity-0" : "opacity-100"
+              }`}
           />
         </div>
 
@@ -251,9 +255,8 @@ export default function AdvancedImageGallery() {
           <img
             src={images[9].src || "/placeholder.svg"}
             alt={images[9].alt}
-            className={`w-full h-full object-cover transition-opacity duration-1000 ${
-              isTransitioning(9) ? "opacity-0" : "opacity-100"
-            }`}
+            className={`w-full h-full object-cover transition-opacity duration-1000 ${isTransitioning(9) ? "opacity-0" : "opacity-100"
+              }`}
           />
         </div>
 
@@ -262,18 +265,16 @@ export default function AdvancedImageGallery() {
             <img
               src={images[10].src || "/placeholder.svg"}
               alt={images[10].alt}
-              className={`w-full h-full object-cover transition-opacity duration-1000 ${
-                isTransitioning(10) ? "opacity-0" : "opacity-100"
-              }`}
+              className={`w-full h-full object-cover transition-opacity duration-1000 ${isTransitioning(10) ? "opacity-0" : "opacity-100"
+                }`}
             />
           </div>
           <div className="overflow-hidden">
             <img
               src={images[11 % images.length].src || "/placeholder.svg"}
               alt={images[11 % images.length].alt}
-              className={`w-full h-full object-cover transition-opacity duration-1000 ${
-                isTransitioning(11) ? "opacity-0" : "opacity-100"
-              }`}
+              className={`w-full h-full object-cover transition-opacity duration-1000 ${isTransitioning(11) ? "opacity-0" : "opacity-100"
+                }`}
             />
           </div>
         </div>
@@ -282,9 +283,8 @@ export default function AdvancedImageGallery() {
           <img
             src={images[0].src || "/placeholder.svg"}
             alt={images[0].alt}
-            className={`w-full h-full object-cover transition-opacity duration-1000 ${
-              isTransitioning(0) ? "opacity-0" : "opacity-100"
-            }`}
+            className={`w-full h-full object-cover transition-opacity duration-1000 ${isTransitioning(0) ? "opacity-0" : "opacity-100"
+              }`}
           />
         </div>
       </div>
